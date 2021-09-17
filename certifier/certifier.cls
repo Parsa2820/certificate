@@ -14,6 +14,7 @@
 \setlength{\parindent}{0pt}
 \usepackage{geometry}
 \geometry{tmargin=.5cm, bmargin=.5cm, lmargin=.5cm, rmargin=.5cm}
+\RequirePackage{wallpaper}
 \RequirePackage{pgffor}
 \RequirePackage{graphicx}
 
@@ -46,17 +47,29 @@
 \newcommand{\certdirector}[1]{\renewcommand{\@certdirector}{#1}}
 \newcommand{\certchairman}[1]{\renewcommand{\@certchairman}{#1}}
 
+\newcommand{\@styletile}{Style Tile}
+\newcommand{\styletile}[1]{\renewcommand{\@styletile}{#1}}
+
+
 \newcommand{\certify}[1]{
     \newpage
-    \begin{center}
-        \includegraphics[height=2.1cm]{\@companylogo} \\
-        \textbf{\@companyname} \\
-        {\tiny \@companytagline} \\
-        {\huge \textbf{\@certtitle}} \\
-        {\Large \@certdate} \\
-        {\Large \@beforename \textbf{#1} \@aftername} \\
-        {\normalsize \@certdirector \hspace*{\fill} \@certchairman}
-    \end{center}
+    \TileSquareWallPaper{5}{\@styletile}
+    \centering
+    \begin{minipage}{0.7\textwidth}
+        \begin{center}
+            \includegraphics[height=2.1cm]{\@companylogo} \\
+            \textbf{\@companyname} \\
+            {\tiny \@companytagline}
+            \vspace*{2cm} \\
+            {\huge \textbf{\@certtitle}}
+            \vspace*{0.5cm} \\
+            {\Large \@certdate}
+            \vspace*{2cm} \\
+            {\Large \@beforename \textbf{#1} \@aftername}
+            \vspace*{2cm} \\
+            {\normalsize \@certdirector \hspace*{\fill} \@certchairman}
+        \end{center}
+    \end{minipage}
 }
 
 \newcommand{\bulkcertify}[1]{\foreach \x in #1 {\certify{\x} \par}}
