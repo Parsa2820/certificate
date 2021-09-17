@@ -11,8 +11,12 @@
 
 \LoadClass[landscape]{article}
 \pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\usepackage{geometry}
+\geometry{tmargin=.5cm, bmargin=.5cm, lmargin=.5cm, rmargin=.5cm}
 \RequirePackage{pgffor}
 \RequirePackage{graphicx}
+
 
 %%%%%%%%%%%%%
 %% Options %%
@@ -44,17 +48,15 @@
 
 \newcommand{\certify}[1]{
     \newpage
-    \begin{figure}[htbp]
-        \centering
-        \includegraphics[width=0.4\textwidth]{\@companylogo}
-    \end{figure}
-    \@companyname \\
-    \@companytagline \\
-    \@certtitle \\
-    \@certdate \\
-    \@beforename #1 \@aftername \\
-    \@certdirector \\
-    \@certchairman
+    \begin{center}
+        \includegraphics[height=2.1cm]{\@companylogo} \\
+        \textbf{\@companyname} \\
+        {\tiny \@companytagline} \\
+        {\huge \textbf{\@certtitle}} \\
+        {\Large \@certdate} \\
+        {\Large \@beforename \textbf{#1} \@aftername} \\
+        {\normalsize \@certdirector \hspace*{\fill} \@certchairman}
+    \end{center}
 }
 
 \newcommand{\bulkcertify}[1]{\foreach \x in #1 {\certify{\x} \par}}
