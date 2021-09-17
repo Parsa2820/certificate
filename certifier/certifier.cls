@@ -12,12 +12,11 @@
 \LoadClass[landscape]{article}
 \pagenumbering{gobble}
 \setlength{\parindent}{0pt}
-\usepackage{geometry}
+\RequirePackage{geometry}
 \geometry{tmargin=.5cm, bmargin=.5cm, lmargin=.5cm, rmargin=.5cm}
 \RequirePackage{wallpaper}
 \RequirePackage{pgffor}
 \RequirePackage{graphicx}
-
 
 %%%%%%%%%%%%%
 %% Options %%
@@ -49,7 +48,6 @@
 
 \newcommand{\@styletile}{Style Tile}
 \newcommand{\styletile}[1]{\renewcommand{\@styletile}{#1}}
-
 
 \newcommand{\certify}[1]{
     \newpage
