@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{certifier}
+\ProvidesClass{certificate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Preliminary declarations %%
@@ -64,7 +64,7 @@
             {\Large \@certdate}
             \vspace*{2cm} \\
             {\Large \@beforename \textbf{#1} \@aftername}
-            \vspace*{2cm} \\
+            \vspace*{\fill} \\
             {\normalsize \@certdirector \hspace*{\fill} \@certchairman}
         \end{center}
     \end{minipage}
